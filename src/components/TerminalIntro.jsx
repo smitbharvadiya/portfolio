@@ -112,7 +112,7 @@ export default function TerminalIntro({ onDone }) {
   return (
     <div
       ref={containerRef}
-      className="h-55 overflow-y-auto scroll-smooth font-mono text-sm sm:text-base pt-8 rounded-md"
+      className="h-55 overflow-y-auto scroll-smooth font-mono text-sm sm:text-base pt-6 rounded-md"
       style={{
         scrollbarWidth: 'none',
         msOverflowStyle: 'none',
