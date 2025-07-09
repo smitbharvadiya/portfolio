@@ -1,6 +1,7 @@
 import Navbar from "../components/Header"
 import Tabs from "../components/tabs"
 import FileExplorer from "../components/fileExplorer"
+import Main from "../components/Main"
 import Footer from "../components/Footer"
 
 export default function Project() {
@@ -11,6 +12,7 @@ export default function Project() {
             <Tabs />
             <div className="flex flex-1">
                 <FileExplorer />
+                <Main />
             </div>
             <Footer />
         </div>

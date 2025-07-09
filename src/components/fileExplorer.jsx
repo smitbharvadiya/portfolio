@@ -11,7 +11,7 @@ const FileExplorer = () => {
     <div className="w-1/5 h-full bg-[#020817] text-white overflow-auto">
 
       <div className="text-[#94a3b8] text-sm px-4 py-2">FILE EXPLORER</div>
-      <div className="h-1 w-4/5 mx-auto rounded-full bg-[#1e293b] mb-2"></div>
+      <div className="h-[1px] rounded-full bg-[#1e293b] mx-2 mb-2"></div>
 
       <div
         className="flex items-center cursor-pointer hover:bg-[#1e293b] px-4 py-1"
