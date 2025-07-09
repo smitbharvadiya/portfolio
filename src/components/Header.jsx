@@ -1,45 +1,65 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
+  const baseClass =
+    "h-full px-5 flex items-center border border-gray-700 transition";
+  const activeClass = "text-white border-b-2 border-b-yellow-400";
+  const inactiveClass = "text-[#90a1b9]";
+
   return (
-    <header className="bg-[#020817] text-[#90a1b9] border-b border-gray-700 font-mono">
+    <header className="bg-[#020817] border-b border-gray-700 font-mono">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-10">
-        
-        
         <nav className="flex h-full">
-          <a
-            href="#"
-            className="h-full pr-14 pl-4 font-bold flex items-center border border-gray-700 hover:text-white transition"
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              `h-full pr-14 pl-4 font-bold flex items-center border border-gray-700 transition ${
+                isActive ? activeClass : inactiveClass
+              }`
+            }
           >
             Smit.dev
-          </a>
-          <a
-            href="#hello"
-            className="h-full px-5 flex items-center border border-gray-700 hover:text-white border-b-2 border-b-yellow-400"
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${baseClass} ${isActive ? activeClass : inactiveClass}`
+            }
           >
             _about-me
-          </a>
-          <a
-            href="#about"
-            className="h-full px-5 flex items-center border border-gray-700 hover:text-white transition"
+          </NavLink>
+
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              `${baseClass} ${isActive ? activeClass : inactiveClass}`
+            }
           >
             _projects
-          </a>
-          <a
-            href="#projects"
-            className="h-full px-5 flex items-center border border-gray-700 hover:text-white transition"
+          </NavLink>
+
+          <NavLink
+            to="/techstack"
+            className={({ isActive }) =>
+              `${baseClass} ${isActive ? activeClass : inactiveClass}`
+            }
           >
             _technology
-          </a>
+          </NavLink>
         </nav>
 
         <div className="h-full">
-          <a
-            href="#contact"
-            className="h-full px-5 flex items-center border border-gray-700 hover:text-white transition"
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `${baseClass} ${isActive ? activeClass : inactiveClass}`
+            }
           >
             _contact-me
-          </a>
+          </NavLink>
         </div>
-
       </div>
     </header>
   );

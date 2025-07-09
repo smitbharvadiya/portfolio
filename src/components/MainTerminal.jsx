@@ -27,7 +27,7 @@ const content = [
     { tokens: [{ text: "    {", isOperator: true },], delay: 80, typeDelay: 20 },
     {
         tokens: [
-            { text: "       return Ok", isKeyword: true },
+            { text: "      return Ok", isKeyword: true },
             { text: "(", isOperator: true },
             { text: "new", isKeyword: true },
         ],
