@@ -15,13 +15,13 @@ const projects = [
     link: "https://stayzy-cj60.onrender.com/",
     accent: "#EC4899"
   },
-  {
-    title: "Blood Donor AI",
-    description: "Voice-powered blood donation eligibility assistant for rural areas.",
-    tech: ["Python", "Flask", "Speech Recognition", "TTS"],
-    link: "https://github.com/your-username/blood-donation-ai",
-    accent: "#EF4444"
-  },
+//   {
+//     title: "Blood Donor AI",
+//     description: "Voice-powered blood donation eligibility assistant for rural areas.",
+//     tech: ["Python", "Flask", "Speech Recognition", "TTS"],
+//     link: "https://github.com/your-username/blood-donation-ai",
+//     accent: "#EF4444"
+//   },
 ];
 
 export default function Main() {

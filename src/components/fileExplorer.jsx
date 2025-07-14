@@ -49,7 +49,7 @@ const FileExplorer = () => {
                 className="flex items-center cursor-pointer hover:bg-[#1e293b] px-2 py-1"
               >
                 <FaReact className="text-blue-400 mr-2" />
-                <span className="text-sm font-semibold">devhub</span>
+                <span className="text-sm font-light">devhub</span>
               </div>
             </div>
           )}

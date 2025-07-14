@@ -5,7 +5,7 @@ import { FaArrowDownLong, FaArrowUpLong } from "react-icons/fa6";
 const TerminalFooter = () => {
   return (
 
-    <footer className="absolute bottom-0 w-full">
+    <footer className="w-full">
       <div className="h-6 flex justify-between items-center text-xs border border-gray-800 bg-[#10182a] text-[#94a3a1]">
         <div className="flex h-full font-semibold">
           <span className="h-full px-3 border border-gray-800 flex items-center gap-x-2"><LuGitFork size={14}/> main</span>

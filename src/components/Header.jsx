@@ -41,7 +41,7 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/techstack"
+            to="/tech-stack"
             className={({ isActive }) =>
               `${baseClass} ${isActive ? activeClass : inactiveClass}`
             }
