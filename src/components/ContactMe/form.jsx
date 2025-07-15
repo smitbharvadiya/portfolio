@@ -1,6 +1,10 @@
-const Form = () => {
+import { useState } from "react";
+
+const Form = ( {name, setName, email, setEmail, message, setMessage} ) => {
+
+
   return (
-    <section className="w-full md:w-2/5 h-full bg-[#020817] text-white flex items-center justify-center px-4 py-8 md:py-0">
+    <section className="w-full md:w-3/7 h-full bg-[#020817] text-white flex items-center justify-center px-4 pl-10 py-8 md:py-0">
       <div className="w-full max-w-3xl font-mono">
         <h2 className="text-2xl font-bold text-center mb-8 text-blue-400">
           // Send Me a Message
@@ -16,6 +20,8 @@ const Form = () => {
               <input
                 type="text"
                 placeholder="const name = "
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full px-4 py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-sm"
               />
             </div>
@@ -26,6 +32,8 @@ const Form = () => {
               <input
                 type="email"
                 placeholder="const email = "
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-sm"
               />
             </div>
@@ -38,6 +46,8 @@ const Form = () => {
             </label>
             <textarea
               placeholder="const message = "
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               rows={5}
               className="w-full px-4 py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-sm"
             ></textarea>
