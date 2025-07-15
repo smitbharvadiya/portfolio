@@ -1,5 +1,5 @@
 import Navbar from "../components/Header"
-import Hero from "../components/Hero"
+import Hero from "../components/Home/Hero"
 import TerminalFooter from "../components/Footer"
 
 export default function Home() {

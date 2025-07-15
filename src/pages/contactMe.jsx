@@ -1,20 +1,18 @@
 import Navbar from "../components/Header"
 import Tabs from "../components/tabs"
-import FileExplorer from "../components/Projects/fileExplorer"
-import Main from "../components/Projects/Main"
-import Footer from "../components/Footer"
+import Form from "../components/ContactMe/form"
+import TerminalFooter from "../components/Footer"
 
-export default function Project() {
+export default function Contact() {
 
     return (
         <div className="flex flex-col h-screen">
             <Navbar />
             <Tabs />
             <div className="flex flex-1">
-                <FileExplorer />
-                <Main />
+                <Form />
             </div>
-            <Footer />
+            <TerminalFooter />
         </div>
     )
 }

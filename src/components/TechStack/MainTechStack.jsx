@@ -44,7 +44,7 @@ export default function MainTechStack({ selectedFile }) {
   const { title, stack } = techStacks[selectedFile] || techStacks["frontend.json"];
 
   return (
-     <section className="w-full bg-[#111826] py-12 px-6 text-white">
+     <section className="w-4/5 bg-[#111826] py-12 px-6 text-white">
       <div className="w-full">
         <h2 className="text-2xl font-semibold mb-8">{title}</h2>
 

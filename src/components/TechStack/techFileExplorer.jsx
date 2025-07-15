@@ -1,7 +1,7 @@
 import { IoIosArrowDown, IoIosCode } from "react-icons/io";
 import { TbDatabase } from "react-icons/tb";
 import { MdStorage, MdBuild } from "react-icons/md";
-import folder from "../assets/images/folder.png";
+import folder from "../../assets/images/folder.png";
 import { useState } from "react";
 
 const files = [

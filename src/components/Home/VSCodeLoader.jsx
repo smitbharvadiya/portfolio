@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import vscodeLogo from "../assets/vscodeLogo.svg";
+import vscodeLogo from "../../assets/vscodeLogo.svg";
 
 export default function VSCodeLoader({ onDone }) {
   const [progress, setProgress] = useState(0);

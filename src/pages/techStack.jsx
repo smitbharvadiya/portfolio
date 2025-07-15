@@ -1,7 +1,7 @@
 import Navbar from "../components/Header"
 import Tabs from "../components/tabs"
-import TechFileExplorer from "../components/techFileExplorer"
-import MainTechStack from "../components/MainTechStack"
+import TechFileExplorer from "../components/TechStack/techFileExplorer"
+import MainTechStack from "../components/TechStack/MainTechStack"
 import Footer from "../components/Footer"
 import { useState } from "react"
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaReact } from "react-icons/fa";
-import folder from "../assets/images/folder.png";
+import folder from "../../assets/images/folder.png";
 
 const FileExplorer = () => {
   const [isProjectsOpen, setIsProjectsOpen] = useState(true);
