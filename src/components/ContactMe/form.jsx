@@ -1,6 +1,40 @@
-import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 
-const Form = ( {name, setName, email, setEmail, message, setMessage} ) => {
+const Form = ({ name, setName, email, setEmail, message, setMessage }) => {
+  const formRef = useRef();
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!name || !email || !message) {
+      alert("Please fill all fields!");
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSubmitted(true);
+          setTimeout(() => setSubmitted(false), 3000);
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Something went wrong. Please try again.");
+        }
+      );
+  };
 
 
   return (
@@ -10,7 +44,7 @@ const Form = ( {name, setName, email, setEmail, message, setMessage} ) => {
           // Send Me a Message
         </h2>
 
-        <form className="space-y-6">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
           {/* Row: Name & Email */}
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1">
@@ -19,6 +53,7 @@ const Form = ( {name, setName, email, setEmail, message, setMessage} ) => {
               </label>
               <input
                 type="text"
+                name="user_name"
                 placeholder="const name = "
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -31,6 +66,7 @@ const Form = ( {name, setName, email, setEmail, message, setMessage} ) => {
               </label>
               <input
                 type="email"
+                name="user_email"
                 placeholder="const email = "
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -46,6 +82,7 @@ const Form = ( {name, setName, email, setEmail, message, setMessage} ) => {
             </label>
             <textarea
               placeholder="const message = "
+              name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={5}
@@ -60,6 +97,13 @@ const Form = ( {name, setName, email, setEmail, message, setMessage} ) => {
           >
             submitMessage();
           </button>
+
+          {/* Success */}
+          {submitted && (
+            <p className="text-green-400 text-center text-sm mt-1">
+              Message sent successfully!
+            </p>
+          )}
         </form>
       </div>
     </section>
