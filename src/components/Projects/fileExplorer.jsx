@@ -3,7 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaReact } from "react-icons/fa";
 import folder from "../../assets/images/folder.png";
 
-const FileExplorer = () => {
+const FileExplorer = ({ openTab }) => {
   const [isProjectsOpen, setIsProjectsOpen] = useState(true);
   const [isReactOpen, setIsReactOpen] = useState(true);
 
@@ -47,6 +47,7 @@ const FileExplorer = () => {
             <div className="ml-6">
               <div
                 className="flex items-center cursor-pointer hover:bg-[#1e293b] px-2 py-1"
+                onClick={() => openTab("devhub.json")}
               >
                 <FaReact className="text-blue-400 mr-2" />
                 <span className="text-sm font-light">devhub</span>

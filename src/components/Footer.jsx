@@ -1,4 +1,4 @@
-import { FaTwitter, FaTerminal } from "react-icons/fa";
+import { FaInstagram, FaTerminal } from "react-icons/fa";
 import { LuLinkedin, LuGithub, LuGitFork } from "react-icons/lu";
 import { FaArrowDownLong, FaArrowUpLong } from "react-icons/fa6";
 
@@ -22,10 +22,14 @@ const TerminalFooter = () => {
       <div className="h-10 flex justify-between items-center text-sm bg-[#020817] text-[#94a3a1]">
         <div className="flex h-full">
           <span className="h-full font-mono px-3 border border-t-0 border-gray-800 flex items-center">find me in</span>
-          <span className="h-full px-3 border border-t-0 border-gray-800 flex items-center hover:text-white cursor-pointer"><FaTwitter/></span>
-          <span className="h-full px-3 border border-t-0 border-gray-800 flex items-center hover:text-white cursor-pointer"><LuLinkedin size={18}/></span>
+          <a href="https://www.instagram.com/smit._ahir/" target="_blank">
+            <span className="h-full px-3 border border-t-0 border-gray-800 flex items-center hover:text-white cursor-pointer"><FaInstagram size={18}/></span>
+          </a>
+          <a href="www.linkedin.com/in/smit-bharvadiya" target="_blank">
+            <span className="h-full px-3 border border-t-0 border-gray-800 flex items-center hover:text-white cursor-pointer"><LuLinkedin size={18}/></span>
+          </a>
         </div>
-        <a href="https://github.com/smitbharvadiya" className="flex h-full px-2 text-sm  gap-x-2 hover:text-white cursor-pointer">
+        <a href="https://github.com/smitbharvadiya" target="_blank" className="flex h-full px-2 text-sm  gap-x-2 hover:text-white cursor-pointer">
           <span className="h-full flex items-center">@smitbharvadiya</span>
           <span className="h-full flex items-center"><LuGithub size={18}/></span>
         </a>

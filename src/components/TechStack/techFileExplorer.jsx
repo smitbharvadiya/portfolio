@@ -11,7 +11,7 @@ const files = [
   { name: "tools.json", icon: <MdBuild size={18} className="text-[#facc15]" /> },
 ];
 
-const TechFileExplorer = ({ selectedFile, setSelectedFile }) => {
+const TechFileExplorer = ({ selectedFile, setSelectedFile, openTab }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -30,7 +30,7 @@ const TechFileExplorer = ({ selectedFile, setSelectedFile }) => {
           }`}
         />
         <img src={folder} alt="folder" className="h-4 mr-2" />
-        <span className="text-sm font-semibold">skills / tech stack</span>
+        <span className="text-sm font-medium">tech-stack</span>
       </div>
 
       {isOpen && (
@@ -38,13 +38,16 @@ const TechFileExplorer = ({ selectedFile, setSelectedFile }) => {
           {files.map((file) => (
             <div
               key={file.name}
-              onClick={() => setSelectedFile(file.name)}
+              onClick={() => {
+                setSelectedFile(file.name); 
+                openTab(`${file.name}.json`);
+              }}
               className={`flex items-center cursor-pointer px-2 py-1 hover:bg-[#1e293b] ${
                 selectedFile === file.name ? "bg-[#1e293b]" : ""
               }`}
             >
               {file.icon}
-              <span className="text-sm ml-2">{file.name}</span>
+              <span className="text-sm font-light ml-2">{file.name}</span>
             </div>
           ))}
         </div>

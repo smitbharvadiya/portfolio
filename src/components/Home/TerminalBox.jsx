@@ -35,6 +35,10 @@ export default function TerminalBox() {
       <div 
         ref={terminalRef}
         className="bg-[#1e1e1e] text-[#e0e0e0] font-mono p-4 h-55 overflow-y-auto"
+        style={{
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+      }}
       >
         {stage === 0 && <TerminalIntro onDone={() => setStage(1)} />}
         {stage === 1 && <VSCodeLoader onDone={() => setStage(2)} />}

@@ -17,7 +17,7 @@ const Hero = () => {
             <span className="text-purple-400">const </span>
             <span className="text-green-400">githubLink </span>
             <span className="text-pink-400">= </span>
-            <a href="https://github.com/smitbharvadiya" className="text-[#f58b12] cursor-pointer hover:underline">"https://github.com/smit-bharvadiya"</a>
+            <a href="https://github.com/smitbharvadiya" target="_blank" className="text-[#f58b12] cursor-pointer hover:underline">"https://github.com/smit-bharvadiya"</a>
           </p>
         </div>
       </div>
