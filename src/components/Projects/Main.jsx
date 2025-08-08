@@ -14,22 +14,20 @@ const projects = [
     tech: ["Node.js", "MongoDB", "Express", "EJS"],
     link: "https://stayzy-cj60.onrender.com/",
     accent: "#EC4899"
-  },
-//   {
-//     title: "Blood Donor AI",
-//     description: "Voice-powered blood donation eligibility assistant for rural areas.",
-//     tech: ["Python", "Flask", "Speech Recognition", "TTS"],
-//     link: "https://github.com/your-username/blood-donation-ai",
-//     accent: "#EF4444"
-//   },
+  }
 ];
 
-export default function Main() {
+export default function Main({ selectedProject }) {
+
+  const filteredProjects = selectedProject
+    ? projects.filter((p) => p.title === selectedProject)
+    : projects;
+
   return (
     <div className="flex-grow w-4/5 bg-gradient-to-br from-[#0f172a] to-[#1a2b50] px-6 py-6 text-white">
  
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={index}
               className="relative group overflow-hidden rounded-xl bg-[#1e293b]/50 backdrop-blur-sm border border-gray-700 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl"

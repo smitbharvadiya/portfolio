@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaReact } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
 import folder from "../../assets/images/folder.png";
 
 const FileExplorer = ({ openTab }) => {
   const [isProjectsOpen, setIsProjectsOpen] = useState(true);
   const [isReactOpen, setIsReactOpen] = useState(true);
+  const [isFullOpen, setIsFullOpen] = useState(true);
 
   return (
     <div className="w-1/5 h-full bg-[#020817] text-white overflow-auto">
@@ -55,7 +57,35 @@ const FileExplorer = ({ openTab }) => {
             </div>
           )}
 
+          <div
+            className="flex items-center cursor-pointer hover:bg-[#1e293b] px-2 py-1"
+            onClick={() => setIsFullOpen(!isFullOpen)}
+          >
+            <IoIosArrowDown
+              size={14}
+              className={`text-[#94a3b8] mr-2 transition-transform duration-300 ${
+                isFullOpen ? "rotate-0" : "-rotate-90"
+              }`}
+            />
+            <img src={folder} alt="folder" className="h-4 mr-2" />
+            <span className="text-sm font-semibold">Full Stack</span>
+          </div>
+
+          {isFullOpen && (
+            <div className="ml-6">
+              <div
+                className="flex items-center cursor-pointer hover:bg-[#1e293b] px-2 py-1"
+                onClick={() => openTab("stayzy.json")}
+              >
+                <FaNodeJs className="text-green-400 mr-2" />
+                <span className="text-sm font-light">Stayzy</span>
+              </div>
+            </div>
+          )}
+
         </div>
+
+        
 
       )}
 
