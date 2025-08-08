@@ -24,7 +24,7 @@ const AboutFileExplorer = ({ openTab }) => {
                         }`}
                 />
                 <img src={folder} alt="folder" className="h-4 mr-2" />
-                <span className="text-sm font-semibold">personal-info</span>
+                <span className="text-sm font-semibold">about-me</span>
             </div>
 
             {isProjectsOpen && (
