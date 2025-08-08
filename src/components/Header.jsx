@@ -23,7 +23,7 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/about"
+            to="/about-me"
             className={({ isActive }) =>
               `${baseClass} ${isActive ? activeClass : inactiveClass}`
             }
@@ -60,6 +60,7 @@ const Navbar = () => {
             _contact-me
           </NavLink>
         </div>
+        
       </div>
     </header>
   );

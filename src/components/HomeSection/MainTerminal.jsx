@@ -18,7 +18,7 @@ const content = [
         tokens: [
             { text: "  public", isKeyword: true },
             { text: " IActionResult"},
-            { text: ' GetHello"', isKeyword: true },
+            { text: ' GetHello', isKeyword: true },
             { text: "()", isOperator: true },
         ],
         delay: 80,

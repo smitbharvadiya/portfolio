@@ -18,7 +18,7 @@ const TabBar = ({ tabs, activeTab, setActiveTab, closeTab }) => (
               e.stopPropagation(); 
               closeTab(tab);
             }}
-            className="ml-2 opacity-0 group-hover:opacity-100  text-[#94a3b8] duration-200"
+            className="ml-2 opacity-0 group-hover:opacity-100  cursor-pointer text-[#94a3b8] duration-200"
           >
             ×
           </button>
