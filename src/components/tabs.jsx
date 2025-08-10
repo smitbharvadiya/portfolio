@@ -1,5 +1,4 @@
 const TabBar = ({ tabs, activeTab, setActiveTab, closeTab }) => {
-  
   if (!tabs || tabs.length === 0) return null;
 
   return (
@@ -20,7 +19,9 @@ const TabBar = ({ tabs, activeTab, setActiveTab, closeTab }) => {
                 e.stopPropagation();
                 closeTab(tab);
               }}
-              className="ml-2 opacity-0 group-hover:opacity-100 cursor-pointer text-[#94a3b8] duration-200"
+              className="ml-2 text-[#94a3b8] duration-200
+                md:opacity-0 md:group-hover:opacity-100 opacity-100" 
+              // Always visible on mobile (opacity-100), hover-to-show on md+
             >
               ×
             </button>
