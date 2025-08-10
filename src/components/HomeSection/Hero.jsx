@@ -42,7 +42,7 @@ const Hero = () => {
 
   return (
     <motion.section 
-      className="min-h-[90vh] bg-[#020817] text-white flex flex-col md:flex-row items-center justify-evenly md:justify-between px-4 sm:px-8 md:px-12 lg:px-20 py-8 sm:py-12 gap-6 sm:gap-0 overflow-hidden"
+      className="min-h-[90vh] bg-[#020817] text-white flex flex-col md:flex-row items-center justify-evenly md:justify-between px-4 sm:px-8 md:px-12 lg:px-20 py-8 sm:py-12 gap-6 sm:gap-0 overflow-hidden pb-22"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
