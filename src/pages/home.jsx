@@ -8,7 +8,6 @@ export default function Home() {
     <div className="h-screen flex flex-col overflow-hidden">
         <Navbar/>
         <main className="flex-1 ">
-
         <Hero/>
         </main>
         <TerminalFooter/>
