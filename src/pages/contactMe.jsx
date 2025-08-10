@@ -21,7 +21,7 @@ export default function Contact() {
                 setActiveTab={setActiveTab}
                 closeTab={closeTab}
             />
-            <div className="flex flex-1">
+            <div className="flex flex-col md:flex-row flex-grow min-h-0 pb-12">
                 <Form name={name} setName={setName} email={email} setEmail={setEmail} message={message} setMessage={setMessage} />
                 <ContactTerminal name={name} email={email} message={message} />
             </div>

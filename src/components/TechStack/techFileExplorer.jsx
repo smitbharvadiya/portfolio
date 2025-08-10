@@ -1,24 +1,34 @@
-import { IoIosArrowDown, IoIosCode } from "react-icons/io";
+import { useState } from "react";
+import { IoIosArrowDown, IoIosClose } from "react-icons/io";
+import { IoIosCode } from "react-icons/io";
 import { TbDatabase } from "react-icons/tb";
 import { MdStorage, MdBuild } from "react-icons/md";
 import folder from "../../assets/images/folder.png";
-import { useState } from "react";
 
-const files = [
-  { name: "frontend.json", icon: <IoIosCode size={18} className="text-[#8c64bd]" /> },
-  { name: "backend.json", icon: <MdStorage size={18} className="text-[#60a5fa]" /> },
-  { name: "database.json", icon: <TbDatabase size={18} className="text-[#34d399]" /> },
-  { name: "tools.json", icon: <MdBuild size={18} className="text-[#facc15]" /> },
-];
-
-const TechFileExplorer = ({ selectedFile, setSelectedFile, openTab }) => {
+const TechFileExplorer = ({ openTab, setIsCollapsed, selectedFile, setSelectedFile }) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  return (
-    <div className="w-1/5 h-full bg-[#020817] text-white overflow-auto">
-      <div className="text-[#94a3b8] text-sm px-4 py-2">FILE EXPLORER</div>
-      <div className="h-[1px] rounded-full bg-[#1e293b] mx-2 mb-2"></div>
+  const files = [
+    { name: "frontend.json", icon: <IoIosCode size={18} className="text-[#8c64bd]" /> },
+    { name: "backend.json", icon: <MdStorage size={18} className="text-[#60a5fa]" /> },
+    { name: "database.json", icon: <TbDatabase size={18} className="text-[#34d399]" /> },
+    { name: "tools.json", icon: <MdBuild size={18} className="text-[#facc15]" /> },
+  ];
 
+  return (
+    <div className="h-full overflow-auto">
+      {/* Mobile header */}
+      <div className="md:hidden flex items-center justify-between p-3 border-b border-gray-800 bg-[#0f172a] sticky top-0 z-10">
+        <span className="text-xs text-gray-400">FILE EXPLORER</span>
+        <button
+          onClick={() => setIsCollapsed(true)}
+          className="text-gray-400 hover:text-white transition"
+        >
+          <IoIosClose size={20} />
+        </button>
+      </div>
+
+      {/* Tech stack folder */}
       <div
         className="flex items-center cursor-pointer hover:bg-[#1e293b] px-4 py-1"
         onClick={() => setIsOpen(!isOpen)}
@@ -30,7 +40,7 @@ const TechFileExplorer = ({ selectedFile, setSelectedFile, openTab }) => {
           }`}
         />
         <img src={folder} alt="folder" className="h-4 mr-2" />
-        <span className="text-sm font-medium">tech-stack</span>
+        <span className="text-sm font-semibold">tech-stack</span>
       </div>
 
       {isOpen && (
@@ -39,8 +49,8 @@ const TechFileExplorer = ({ selectedFile, setSelectedFile, openTab }) => {
             <div
               key={file.name}
               onClick={() => {
-                setSelectedFile(file.name); 
-                openTab(`${file.name}.json`);
+                setSelectedFile(file.name);
+                openTab(file.name);
               }}
               className={`flex items-center cursor-pointer px-2 py-1 hover:bg-[#1e293b] ${
                 selectedFile === file.name ? "bg-[#1e293b]" : ""

@@ -36,19 +36,18 @@ const Form = ({ name, setName, email, setEmail, message, setMessage }) => {
       );
   };
 
-
   return (
-    <section className="w-full md:w-3/7 h-full bg-[#020817] text-white flex items-center justify-center px-4 pl-10 py-8 md:py-0">
+    <section className="w-full md:w-3/7 h-full bg-[#020817] text-white flex items-center justify-center px-4 md:pl-10 py-8 md:py-0">
       <div className="w-full max-w-3xl font-mono">
-        <h2 className="text-2xl font-bold text-center mb-8 text-blue-400">
+        <h2 className="text-xl md:text-2xl font-bold text-center mb-6 md:mb-8 text-blue-400">
           // Send Me a Message
         </h2>
 
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
           {/* Row: Name & Email */}
-          <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
             <div className="flex-1">
-              <label className="block mb-2 text-sm text-gray-400">
+              <label className="block mb-1 md:mb-2 text-xs md:text-sm text-gray-400">
                 /* Name */
               </label>
               <input
@@ -57,11 +56,11 @@ const Form = ({ name, setName, email, setEmail, message, setMessage }) => {
                 placeholder="const name = "
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-sm"
+                className="w-full px-3 md:px-4 py-2 md:py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-xs md:text-sm"
               />
             </div>
             <div className="flex-1">
-              <label className="block mb-2 text-sm text-gray-400">
+              <label className="block mb-1 md:mb-2 text-xs md:text-sm text-gray-400">
                 /* Email */
               </label>
               <input
@@ -70,14 +69,14 @@ const Form = ({ name, setName, email, setEmail, message, setMessage }) => {
                 placeholder="const email = "
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-sm"
+                className="w-full px-3 md:px-4 py-2 md:py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-xs md:text-sm"
               />
             </div>
           </div>
 
           {/* Message */}
           <div>
-            <label className="block mb-2 text-sm text-gray-400">
+            <label className="block mb-1 md:mb-2 text-xs md:text-sm text-gray-400">
               /* Message */
             </label>
             <textarea
@@ -85,22 +84,22 @@ const Form = ({ name, setName, email, setEmail, message, setMessage }) => {
               name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              rows={5}
-              className="w-full px-4 py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-sm"
+              rows={4}
+              className="w-full px-3 md:px-4 py-2 md:py-3 bg-[#0f172a] border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 font-mono text-xs md:text-sm"
             ></textarea>
           </div>
 
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white font-medium py-3 rounded hover:bg-blue-700 transition-all duration-200 font-mono text-sm border border-blue-400"
+            className="w-full bg-blue-600 text-white font-medium py-2 md:py-3 rounded hover:bg-blue-700 transition-all duration-200 font-mono text-xs md:text-sm border border-blue-400"
           >
             submitMessage();
           </button>
 
           {/* Success */}
           {submitted && (
-            <p className="text-green-400 text-center text-sm mt-1">
+            <p className="text-green-400 text-center text-xs md:text-sm mt-1">
               Message sent successfully!
             </p>
           )}

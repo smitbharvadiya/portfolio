@@ -1,20 +1,28 @@
 import { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import { FaReact } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
+import { IoIosArrowDown, IoIosClose } from "react-icons/io";
+import { FaReact, FaNodeJs } from "react-icons/fa";
 import folder from "../../assets/images/folder.png";
 
-const FileExplorer = ({ openTab }) => {
+const FileExplorer = ({ openTab, setIsCollapsed }) => {
   const [isProjectsOpen, setIsProjectsOpen] = useState(true);
   const [isReactOpen, setIsReactOpen] = useState(true);
   const [isFullOpen, setIsFullOpen] = useState(true);
 
   return (
-    <div className="w-1/5 h-full bg-[#020817] text-white overflow-auto">
+    <div className="h-full overflow-auto">
+      
+      {/* Mobile header */}
+      <div className="md:hidden flex items-center justify-between p-3 border-b border-gray-800 bg-[#0f172a] sticky top-0 z-10">
+        <span className="text-xs text-gray-400">FILE EXPLORER</span>
+        <button
+          onClick={() => setIsCollapsed(true)}
+          className="text-gray-400 hover:text-white transition"
+        >
+          <IoIosClose size={20} />
+        </button>
+      </div>
 
-      <div className="text-[#94a3b8] text-sm px-4 py-2">FILE EXPLORER</div>
-      <div className="h-[1px] rounded-full bg-[#1e293b] mx-2 mb-2"></div>
-
+      {/* Projects folder */}
       <div
         className="flex items-center cursor-pointer hover:bg-[#1e293b] px-4 py-1"
         onClick={() => setIsProjectsOpen(!isProjectsOpen)}
@@ -31,6 +39,7 @@ const FileExplorer = ({ openTab }) => {
 
       {isProjectsOpen && (
         <div className="ml-6">
+          {/* React folder */}
           <div
             className="flex items-center cursor-pointer hover:bg-[#1e293b] px-2 py-1"
             onClick={() => setIsReactOpen(!isReactOpen)}
@@ -57,6 +66,7 @@ const FileExplorer = ({ openTab }) => {
             </div>
           )}
 
+          {/* Full Stack folder */}
           <div
             className="flex items-center cursor-pointer hover:bg-[#1e293b] px-2 py-1"
             onClick={() => setIsFullOpen(!isFullOpen)}
@@ -82,13 +92,8 @@ const FileExplorer = ({ openTab }) => {
               </div>
             </div>
           )}
-
         </div>
-
-        
-
       )}
-
     </div>
   );
 };
